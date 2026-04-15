@@ -9,5 +9,98 @@
   "author": {
     "name": "Parker Reid",
     "email": "parker@voxprint.com"
+  },
+  "info": {
+    "companyName": "Parker Reid",
+    "productName": "TextEdit",
+    "productVersion": "1.0.0",
+    "copyright": "Copyright 2026 Parker Reid",
+    "comments": "A lightweight text editor",
+    "fileAssociations": [
+      {
+        "ext": "txt",
+        "name": "TextEdit.txt",
+        "description": "Text File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "md",
+        "name": "TextEdit.md",
+        "description": "Markdown File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "json",
+        "name": "TextEdit.json",
+        "description": "JSON File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "yaml",
+        "name": "TextEdit.yaml",
+        "description": "YAML File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "yml",
+        "name": "TextEdit.yml",
+        "description": "YAML File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "toml",
+        "name": "TextEdit.toml",
+        "description": "TOML File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "xml",
+        "name": "TextEdit.xml",
+        "description": "XML File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "csv",
+        "name": "TextEdit.csv",
+        "description": "CSV File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "log",
+        "name": "TextEdit.log",
+        "description": "Log File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "ini",
+        "name": "TextEdit.ini",
+        "description": "INI File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "conf",
+        "name": "TextEdit.conf",
+        "description": "Configuration File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "cfg",
+        "name": "TextEdit.cfg",
+        "description": "Configuration File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "env",
+        "name": "TextEdit.env",
+        "description": "Environment File",
+        "iconName": "icon"
+      },
+      {
+        "ext": "properties",
+        "name": "TextEdit.properties",
+        "description": "Properties File",
+        "iconName": "icon"
+      }
+    ]
   }
 }

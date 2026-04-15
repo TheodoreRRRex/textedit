@@ -2,8 +2,9 @@
   import Sidebar from './lib/components/Sidebar.svelte';
   import Editor from './lib/components/Editor.svelte';
   import StatusBar from './lib/components/StatusBar.svelte';
+  import { onMount } from 'svelte';
   import { EventsOn } from '../wailsjs/runtime/runtime.js';
-  import { OpenFile, SaveFile, SaveFileDialog, PickFileDialog, SetDirty, SetWindowTitle } from '../wailsjs/go/main/App.js';
+  import { OpenFile, SaveFile, SaveFileDialog, PickFileDialog, SetDirty, SetWindowTitle, GetStartupFile } from '../wailsjs/go/main/App.js';
   import {
     currentFilePath,
     currentFileName,
@@ -94,6 +95,14 @@
   function handleFileSelect(event: CustomEvent<string>) {
     openFileByPath(event.detail);
   }
+
+  // On startup, check if a file was passed via CLI (e.g. "Open with")
+  onMount(async () => {
+    const startupFile = await GetStartupFile();
+    if (startupFile) {
+      await openFileByPath(startupFile);
+    }
+  });
 
   // Listen for menu events from Go
   EventsOn('menu:open-file', handleOpenFile);

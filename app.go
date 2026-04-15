@@ -21,8 +21,9 @@ func toSlashEntries(entries []editor.DirEntry) []editor.DirEntry {
 }
 
 type App struct {
-	ctx   context.Context
-	dirty bool
+	ctx         context.Context
+	dirty       bool
+	startupFile string
 }
 
 type FileResult struct {
@@ -143,4 +144,8 @@ func (a *App) GetDefaultDirectory() string {
 
 func (a *App) SetWindowTitle(title string) {
 	runtime.WindowSetTitle(a.ctx, title)
+}
+
+func (a *App) GetStartupFile() string {
+	return a.startupFile
 }

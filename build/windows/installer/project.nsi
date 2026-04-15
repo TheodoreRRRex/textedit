@@ -94,6 +94,10 @@ Section
     !insertmacro wails.associateFiles
     !insertmacro wails.associateCustomProtocols
 
+    ; Register in "Open with" context menu for all file types
+    WriteRegStr HKLM "Software\Classes\Applications\${PRODUCT_EXECUTABLE}\shell\open\command" "" '"$INSTDIR\${PRODUCT_EXECUTABLE}" "%1"'
+    WriteRegStr HKLM "Software\Classes\*\OpenWithList\${PRODUCT_EXECUTABLE}" "" ""
+
     !insertmacro wails.writeUninstaller
 SectionEnd
 
@@ -109,6 +113,10 @@ Section "uninstall"
 
     !insertmacro wails.unassociateFiles
     !insertmacro wails.unassociateCustomProtocols
+
+    ; Remove "Open with" registry entries
+    DeleteRegKey HKLM "Software\Classes\Applications\${PRODUCT_EXECUTABLE}"
+    DeleteRegKey HKLM "Software\Classes\*\OpenWithList\${PRODUCT_EXECUTABLE}"
 
     !insertmacro wails.deleteUninstaller
 SectionEnd

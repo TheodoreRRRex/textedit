@@ -3,6 +3,7 @@ package main
 import (
 	"context"
 	"embed"
+	"os"
 
 	"github.com/wailsapp/wails/v2"
 	"github.com/wailsapp/wails/v2/pkg/menu"
@@ -17,6 +18,11 @@ var assets embed.FS
 
 func main() {
 	app := NewApp()
+
+	// If a file path was passed as a CLI argument (e.g. "Open with"), store it
+	if len(os.Args) > 1 {
+		app.startupFile = os.Args[1]
+	}
 
 	appMenu := menu.NewMenu()
 	fileMenu := appMenu.AddSubmenu("File")

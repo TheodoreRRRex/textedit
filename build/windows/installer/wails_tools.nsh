@@ -5,19 +5,19 @@
 !include "FileFunc.nsh"
 
 !ifndef INFO_PROJECTNAME
-    !define INFO_PROJECTNAME "{{.Name}}"
+    !define INFO_PROJECTNAME "textedit"
 !endif
 !ifndef INFO_COMPANYNAME
-    !define INFO_COMPANYNAME "{{.Info.CompanyName}}"
+    !define INFO_COMPANYNAME "Parker Reid"
 !endif
 !ifndef INFO_PRODUCTNAME
-    !define INFO_PRODUCTNAME "{{.Info.ProductName}}"
+    !define INFO_PRODUCTNAME "TextEdit"
 !endif
 !ifndef INFO_PRODUCTVERSION
-    !define INFO_PRODUCTVERSION "{{.Info.ProductVersion}}"
+    !define INFO_PRODUCTVERSION "1.0.0"
 !endif
 !ifndef INFO_COPYRIGHT
-    !define INFO_COPYRIGHT "{{.Info.Copyright}}"
+    !define INFO_COPYRIGHT "Copyright 2026 Parker Reid"
 !endif
 !ifndef PRODUCT_EXECUTABLE
     !define PRODUCT_EXECUTABLE "${INFO_PROJECTNAME}.exe"
@@ -203,20 +203,124 @@ RequestExecutionLevel "${REQUEST_EXECUTION_LEVEL}"
 
 !macro wails.associateFiles
     ; Create file associations
-    {{range .Info.FileAssociations}}
-      !insertmacro APP_ASSOCIATE "{{.Ext}}" "{{.Name}}" "{{.Description}}" "$INSTDIR\{{.IconName}}.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+    
+      !insertmacro APP_ASSOCIATE "txt" "TextEdit.txt" "Text File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
 
-      File "..\{{.IconName}}.ico"
-    {{end}}
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "md" "TextEdit.md" "Markdown File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "json" "TextEdit.json" "JSON File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "yaml" "TextEdit.yaml" "YAML File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "yml" "TextEdit.yml" "YAML File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "toml" "TextEdit.toml" "TOML File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "xml" "TextEdit.xml" "XML File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "csv" "TextEdit.csv" "CSV File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "log" "TextEdit.log" "Log File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "ini" "TextEdit.ini" "INI File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "conf" "TextEdit.conf" "Configuration File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "cfg" "TextEdit.cfg" "Configuration File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "env" "TextEdit.env" "Environment File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
+      !insertmacro APP_ASSOCIATE "properties" "TextEdit.properties" "Properties File" "$INSTDIR\icon.ico" "Open with ${INFO_PRODUCTNAME}" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
+
+      File "..\icon.ico"
+    
 !macroend
 
 !macro wails.unassociateFiles
     ; Delete app associations
-    {{range .Info.FileAssociations}}
-      !insertmacro APP_UNASSOCIATE "{{.Ext}}" "{{.Name}}"
+    
+      !insertmacro APP_UNASSOCIATE "txt" "TextEdit.txt"
 
-      Delete "$INSTDIR\{{.IconName}}.ico"
-    {{end}}
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "md" "TextEdit.md"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "json" "TextEdit.json"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "yaml" "TextEdit.yaml"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "yml" "TextEdit.yml"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "toml" "TextEdit.toml"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "xml" "TextEdit.xml"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "csv" "TextEdit.csv"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "log" "TextEdit.log"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "ini" "TextEdit.ini"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "conf" "TextEdit.conf"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "cfg" "TextEdit.cfg"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "env" "TextEdit.env"
+
+      Delete "$INSTDIR\icon.ico"
+    
+      !insertmacro APP_UNASSOCIATE "properties" "TextEdit.properties"
+
+      Delete "$INSTDIR\icon.ico"
+    
 !macroend
 
 !macro CUSTOM_PROTOCOL_ASSOCIATE PROTOCOL DESCRIPTION ICON COMMAND
@@ -235,15 +339,10 @@ RequestExecutionLevel "${REQUEST_EXECUTION_LEVEL}"
 
 !macro wails.associateCustomProtocols
     ; Create custom protocols associations
-    {{range .Info.Protocols}}
-      !insertmacro CUSTOM_PROTOCOL_ASSOCIATE "{{.Scheme}}" "{{.Description}}" "$INSTDIR\${PRODUCT_EXECUTABLE},0" "$INSTDIR\${PRODUCT_EXECUTABLE} $\"%1$\""
-
-    {{end}}
+    
 !macroend
 
 !macro wails.unassociateCustomProtocols
     ; Delete app custom protocol associations
-    {{range .Info.Protocols}}
-      !insertmacro CUSTOM_PROTOCOL_UNASSOCIATE "{{.Scheme}}"
-    {{end}}
+    
 !macroend
